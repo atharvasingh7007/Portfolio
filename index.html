@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Previous head content remains the same -->
+    <style>
+        /* All previous styles remain the same, just adding/modifying grid styles */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Modified to make first column wider */
+            grid-template-rows: auto auto auto;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            
+        }
+
+        /* All other previous styles remain exactly the same */
+        /* Keep all the existing styles from the previous version */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 75%;
+            margin: 0 auto;
+            padding: 2rem;
+            max-width: 1600px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 2rem;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .let-talk-btn {
+            font-size: 2rem;
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 1.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .let-talk-btn:hover {
+            background-color: #444;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Grid area assignments */
+        .profile-card { 
+            grid-column: span 2;
+         }
+        /* .credentials-card { grid-area: credentials; } */
+        /* .projects-card { grid-area: projects; } */
+        /* .gfonts-card { grid-area: gfonts; } */
+        .services-card {
+            grid-column: span 2;
+         }
+        /* .social-card { grid-area: social; } */
+        .stats-card { 
+            grid-column: span 2;
+         }
+        .work-card { 
+            grid-column: span 2;
+         }
+
+        .profile-card {
+            display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .stats-card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .services-card {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #444;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #888;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "profile"
+                    "credentials"
+                    "projects"
+                    "gfonts"
+                    "services"
+                    "social"
+                    "stats"
+                    "work";
+            }
+        }
+        .profile-image{
+            width: 150px;
+            height: 150px;
+        }
+        .cred {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- All previous body content remains exactly the same -->
+    <div class="container">
+        <nav>
+            <div class="logo"><img src="./img/Logo.jpg" style="width: 250px; height: 100px; mix-blend-mode: difference;"></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#works">Works</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="#contact" class="let-talk-btn">Let's talk</a>
+        </nav>
+
+        <div class="grid-container">
+            <div class="card profile-card">
+                <img src="./img/Logo.jpg" alt="Profile" class="profile-image">
+                <div class="card-title">A WEB DESIGNER</div>
+                <div class="card-content">Atharva SIngh.</div>
+                <p style="color: #888">I am a Web Designer based in san francisco.</p>
+                <div class="arrow-icon">→</div>
+            </div>
+
+            <div class="card credentials-card">
+                <img src="./img/about.svg" class="cred">
+                <div class="card-title">MORE ABOUT ME</div>
+                <div class="card-content">Credentials</div>
+                <div class="arrow-icon">→</div>
+            </div>
+
+            <div class="card projects-card">
+                <div class="card-title">SHOWCASE</div>
+                <div class="card-content">Projects</div>
+                <div class="arrow-icon">→</div>
+            </div>
+
+            <div class="card gfonts-card">
+                <img src="./img/font.svg" class="cred">
+                <div class="card-title">BLOG</div>
+                <div class="card-content">GFonts</div>
+                <div class="arrow-icon">→</div>
+            </div>
+
+            <div class="card services-card">
+                <div class="service-icon">📸</div>
+                <div class="service-icon">🎨</div>
+                <div class="service-icon">🔧</div>
+                <div class="service-icon">💻</div>
+                <div class="card-title" style="grid-column: 1 / -1">CAPABILITIES</div>
+                <div class="card-content" style="grid-column: 1 / -1">Services Offering</div>
+                <div class="arrow-icon">→</div>
+            </div>
+
+            <div class="card social-card">
+                <div class="card-title">STAY WITH ME</div>
+                <div class="card-content">Profiles</div>
+                <div class="social-links">
+                    <div class="social-icon">🎮</div>
+                    <div class="social-icon">🐦</div>
+                </div>
+                <div class="arrow-icon">→</div>
+            </div>
+
+            <div class="card stats-card">
+                <div class="stat">
+                    <div class="stat-number">07</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">+125</div>
+                    <div class="stat-label">Clients Worldwide</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">+210</div>
+                    <div class="stat-label">Total Projects</div>
+                </div>
+            </div>
+
+            <div class="card work-card">
+                <div style="font-size: 2rem; font-weight: bold">
+                    Let's<br>
+                    work <span style="color: #3b82f6">together</span>.
+                </div>
+                <div class="arrow-icon">→</div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="logo">Gridly</div>
+            <div class="nav-links" style="justify-content: center; margin-top: 1rem">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#works">Works</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Previous JavaScript remains the same
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.arrow-icon').style.opacity = '1';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.arrow-icon').style.opacity = '0.5';
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
